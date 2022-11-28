@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A5A2C5F1-0694-404B-B980-7DD9CCA65C97"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A074FF5-E783-4AD7-B8AF-DA4E029E0DD5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersionTests/DeliveryBusinessLogicTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "test_addNewOrder_To_Firestore_Database()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "419A4F4B-5853-42ED-B228-C11575F29FB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "testBusinessLogic()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "419A4F4B-5853-42ED-B228-C11575F29FB6 - 233472224abb3444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.LoginViewController.testBusinessLogic() -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Desktop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "892">
+               </Location>
+               <Location
+                  uuid = "419A4F4B-5853-42ED-B228-C11575F29FB6 - e51d31f8e59e55f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; () in SecureDrop_BasicVersion.LoginViewController.testBusinessLogic() -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Desktop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

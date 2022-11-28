@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Coordinator.updateNavigationController(with:):Coordinator.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SignUpViewController.loginTapped(_:):SignUpViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeliveryViewModel.getDeliveryOwner(for:completion:):DeliveryViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "db.collection(FirestoreKeys.users.description).document(email)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

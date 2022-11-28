@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "64A5B57D-1E01-4610-A081-88A34E070EA1"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "056BD7F4-4568-4809-94D0-F173F882F7EC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/SignupViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "signUpTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "056BD7F4-4568-4809-94D0-F173F882F7EC - 3d3f655a42234b3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.SignUpViewController.signUpTapped(Any) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/SignupViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "816">
+               </Location>
+               <Location
+                  uuid = "056BD7F4-4568-4809-94D0-F173F882F7EC - 3d3f655a42234b3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.SignUpViewController.signUpTapped(Any) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/SignupViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1012">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2A75803-0D45-4FF6-B9F1-A3D9A578ECB3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "signUp(user:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C2A75803-0D45-4FF6-B9F1-A3D9A578ECB3 - f1f2627680bfdb1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.AuthViewModel.signUp(user: SecureDrop_BasicVersion.AuthUser, completion: (Swift.Result&lt;__C.FIRAuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "C2A75803-0D45-4FF6-B9F1-A3D9A578ECB3 - 81b8bfeba787855d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SecureDrop_BasicVersion.AuthViewModel.signUp(user: SecureDrop_BasicVersion.AuthUser, completion: (Swift.Result&lt;__C.FIRAuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6FE72DA-BBB0-414A-8BF4-EAAC4279F14B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "signUp(user:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6512461-6723-4AB6-82E8-5480FAA3D7C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "diTapLoginButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "60C8664C-DA84-49FB-A4B5-F847C8B15F7B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            uuid = "62A48C6D-FDA4-4B6D-9EC5-9A8098E42CFB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43EDB61D-0A49-40D0-9984-1268A02F8210"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "updateMPin(deliveryOwner:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "43EDB61D-0A49-40D0-9984-1268A02F8210 - 33f1356a320e819a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.DeliveryViewModel.updateMPin(deliveryOwner: SecureDrop_BasicVersion.DeliveryOwner, completion: (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "43EDB61D-0A49-40D0-9984-1268A02F8210 - 33f1356a320e819a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.DeliveryViewModel.updateMPin(deliveryOwner: SecureDrop_BasicVersion.DeliveryOwner, completion: (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14674FE9-78CB-4566-A568-D84DD6EC46D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/MPinViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "didTapSetMasterPinBtn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B4A5037-6187-40E0-ABE7-7C8869930027"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/MPinViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "didTapSetMasterPinBtn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "568C6FD7-277F-4871-9AB3-C978B210BDB5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "getDeliveryOwner(for:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "820C7F61-8347-4307-B0CB-A75891C3717D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "getDeliveryOwner(for:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "820C7F61-8347-4307-B0CB-A75891C3717D - 4a09fb8d26baf07a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SecureDrop_BasicVersion.DeliveryViewModel.getDeliveryOwner(for: __C.FIRUser, completion: (Swift.Optional&lt;SecureDrop_BasicVersion.DeliveryOwner&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "820C7F61-8347-4307-B0CB-A75891C3717D - 4a09fb8d26baf07a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SecureDrop_BasicVersion.DeliveryViewModel.getDeliveryOwner(for: __C.FIRUser, completion: (Swift.Optional&lt;SecureDrop_BasicVersion.DeliveryOwner&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatla/Downloads/SecureDrop/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Login_Viewcontrols/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "380">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7D9F3D4-BCC6-4F27-BAC3-1878CECAD638"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Login_Viewcontrols/SignupViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "signUpTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
