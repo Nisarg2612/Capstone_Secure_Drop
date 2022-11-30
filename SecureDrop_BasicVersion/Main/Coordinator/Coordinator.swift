@@ -44,7 +44,7 @@ class Coordinator: NavigationResponderDelegate {
        }
        
     func presentView(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
-           self.navigationController.present(viewController, animated: true, completion: {
+		self.navigationController.visibleViewController?.present(viewController, animated: true, completion: {
                completion?()
            })
        }

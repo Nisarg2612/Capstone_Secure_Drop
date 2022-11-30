@@ -22,7 +22,11 @@ protocol NavigationResponderDelegate: AnyObject {
 
 extension NavigationResponderDelegate {
     func presentView(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
-		self.presentView(viewController, completion: nil)
+		if let closure = completion {
+			self.presentView(viewController, completion: closure)
+		} else {
+			self.presentView(viewController, completion: nil)
+		}
 	}
     func dismiss(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
 		self.dismiss(viewController, completion: nil)
