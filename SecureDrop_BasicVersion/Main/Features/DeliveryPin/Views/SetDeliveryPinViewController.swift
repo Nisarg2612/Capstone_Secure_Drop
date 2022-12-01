@@ -24,7 +24,16 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setup()
     }
-	@objc func didTapHistoryBarButtonItem() {
+	func didTapPasswordChangeBarButtonItem() {
+		Log("didTap: \(#function)", .debug)
+		//TODO: - Create & Launch PasswordChangeViewController()
+		
+	}
+	func didTapMPINChangeBarButtonItem() {
+		Log("didTap: \(#function)", .debug)
+		//TODO: - Create & Launch MPINChangeViewController()
+	}
+	func didTapHistoryBarButtonItem() {
 		Log("didTap: \(#function)", .debug)
 		
 			//check for firAuthUser
@@ -53,7 +62,32 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 	}
 	
 	func setupHistoryNavigationItem() {
-		let rightNavBarBtn =  UIBarButtonItem(title: "History", style: .plain, target: self, action: #selector(didTapHistoryBarButtonItem))
+		let historyAction = UIAction(
+			title: NSLocalizedString("History", comment:""),
+			image: UIImage(systemName:"arrow.up.square")) { historyAction in
+			//TODO: Launch history view controller
+				print("Launch history view controller")
+		}
+		let mpinChangeAction = UIAction(
+			title: NSLocalizedString("MPIN Change", comment:""),
+			image: UIImage(systemName: "arrow.down.square")) { historyAction in
+			//TODO: Launch MPINChange ViewController
+				print("Launch MPINChange ViewController")
+		}
+		let passwordChangeAction = UIAction(
+			title: NSLocalizedString("Password Change", comment:""),
+			image: UIImage(systemName: "arrow.up.square")) { historyAction in
+			//TODO: Launch Password Change View Controller
+				print("Launch Password Change View Controller")
+		}
+		let logoutAction = UIAction(
+			title: NSLocalizedString("Log Out", comment:""),
+			image: UIImage(systemName: "arrow.down.square")) { historyAction in
+			//TODO: Launch LogOut View Controller
+				print("Launch LogOut View Controller")
+		}
+		let contextMenu = UIMenu(title: "Menu", children: [historyAction, mpinChangeAction, passwordChangeAction, logoutAction])
+		let rightNavBarBtn =  UIBarButtonItem(title: "Menu", menu: contextMenu)
 		self.navigationItem.rightBarButtonItem = rightNavBarBtn
 	}
     func setup() {

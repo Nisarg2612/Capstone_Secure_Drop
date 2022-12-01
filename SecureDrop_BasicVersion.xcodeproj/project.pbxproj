@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0F4D7E293834510096CBEC /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D7D293834510096CBEC /* ChangePasswordViewController.swift */; };
 		8D3D6E24291E0C4D00F6ED64 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D6E23291E0C4D00F6ED64 /* AuthViewModel.swift */; };
 		8D3D6E26291E0C6B00F6ED64 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D6E25291E0C6B00F6ED64 /* SignUpViewModel.swift */; };
 		8D3D6E28291E0C9F00F6ED64 /* FirestoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D6E27291E0C9F00F6ED64 /* FirestoreKeys.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D0F4D7D293834510096CBEC /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		8D3D6E23291E0C4D00F6ED64 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		8D3D6E25291E0C6B00F6ED64 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8D3D6E27291E0C9F00F6ED64 /* FirestoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreKeys.swift; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D0F4D7C2938343D0096CBEC /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D7D293834510096CBEC /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		8D3D6E29291E0CBD00F6ED64 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +458,7 @@
 		C7FE754B28DD51D100C6AC17 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8D0F4D7C2938343D0096CBEC /* ChangePassword */,
 				8D3D6E3A291E0F9200F6ED64 /* Shared */,
 				8D3D6E2F291E0D4700F6ED64 /* DeliveryPin */,
 				8DDFFB05291F053900A3BD86 /* History */,
@@ -600,6 +611,7 @@
 				C7E5BB8328FA30A200EBC4A5 /* ShowDeliveryOrderViewController.swift in Sources */,
 				8DDFFB0D291F08CD00A3BD86 /* HistoryTableViewCell.swift in Sources */,
 				8D3D6E24291E0C4D00F6ED64 /* AuthViewModel.swift in Sources */,
+				8D0F4D7E293834510096CBEC /* ChangePasswordViewController.swift in Sources */,
 				8D3D6E28291E0C9F00F6ED64 /* FirestoreKeys.swift in Sources */,
 				C7FE753828DD51C500C6AC17 /* AppDelegate.swift in Sources */,
 				C720B1CC2905CBEA004CB373 /* Logger.swift in Sources */,
