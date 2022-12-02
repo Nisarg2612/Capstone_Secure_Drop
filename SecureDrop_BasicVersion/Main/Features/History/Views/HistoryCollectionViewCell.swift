@@ -29,7 +29,7 @@ class HistoryCollectionViewCell: UIView {
 		self.deliverPin.text = "\(self.viewModel.getDeliveryPin())"
 		self.deliverPin.numberOfLines = 1
 		self.deliverPin.lineBreakMode = .byWordWrapping
-		self.deliverPin.textColor = UIColor.lightGray
+		self.deliverPin.textColor = self.viewModel.cellStyle.color
 		self.deliverPin.font = .systemFont(ofSize: 15, weight: .black)
 		self.deliverPin.adjustsFontSizeToFitWidth = true
 	}
