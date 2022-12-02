@@ -75,7 +75,7 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 		self.navigationItem.rightBarButtonItem = rightNavBarBtn
 	}
 	func layoutView() {
-		self.viewModel.coordinator.hideBackButton(true)
+		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
     func setup() {
         setupGenerateDeliveryPinBtn()
