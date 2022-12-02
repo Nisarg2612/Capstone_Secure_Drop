@@ -7,64 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "605DDE13-5DA4-4A77-9C66-418E75DFB170"
+            uuid = "0132B153-DE6F-485B-B31E-C7EB8658E37C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SecureDrop_BasicVersion/Main/Features/SignUp/Views/SignUpViewController.swift"
+            filePath = "SecureDrop_BasicVersion/Main/Features/DeliveryPin/ViewModels/DeliveryPinViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "signUpTapped(_:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "updateMPin(firUser:newMPIN:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FF63F6AA-0EE0-4A9A-9C8B-B30525302307"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SecureDrop_BasicVersion/Main/Features/SignUp/Views/SignUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "signUpTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "58506146-A962-4553-96B9-3F10619EB016"
+            uuid = "584EDA06-FC43-49A0-89F3-5297DA256183"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SecureDrop_BasicVersion/Main/Features/SignUp/Views/SignUpViewController.swift"
+            filePath = "SecureDrop_BasicVersion/Main/Features/DeliveryPin/ViewModels/DeliveryPinViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "signUpTapped(_:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "updateMPin(firUser:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A27D3A5-A787-4145-8A87-35D468610056"
-            shouldBeEnabled = "No"
+            uuid = "5B0BCEE3-DB9E-454E-8626-E576C00D80F9"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SecureDrop_BasicVersion/Main/View/LaunchViewController.swift"
+            filePath = "SecureDrop_BasicVersion/Main/Features/DeliveryPin/Views/DeliveryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "presentView(_:completion:)"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "updateMPin(deliveryOwner:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5B0BCEE3-DB9E-454E-8626-E576C00D80F9 - bd196f47365a608a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.DeliveryViewModel.updateMPin(deliveryOwner: SecureDrop_BasicVersion.DeliveryOwner, completion: (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wisen/Documents/Wyzant%20Projects/Suman/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Main/Features/DeliveryPin/Views/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "5B0BCEE3-DB9E-454E-8626-E576C00D80F9 - bd196f47365a608a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.DeliveryViewModel.updateMPin(deliveryOwner: SecureDrop_BasicVersion.DeliveryOwner, completion: (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wisen/Documents/Wyzant%20Projects/Suman/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Main/Features/DeliveryPin/Views/DeliveryViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50DA422F-E2DC-4AAC-9DEC-FA27DAA2D428"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Main/Features/DeliveryPin/Views/DeliveryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "updateMPin(deliveryOwner:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

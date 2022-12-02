@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8D0F4D7E293834510096CBEC /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D7D293834510096CBEC /* ChangePasswordViewController.swift */; };
+		8D0F4D91293846160096CBEC /* NewBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D86293846160096CBEC /* NewBottomSheetViewController.swift */; };
+		8D0F4D92293846160096CBEC /* BottomSheetPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D87293846160096CBEC /* BottomSheetPresentationManager.swift */; };
+		8D0F4D93293846160096CBEC /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D8A293846160096CBEC /* PresentedViewController.swift */; };
+		8D0F4D94293846160096CBEC /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D8C293846160096CBEC /* PresentationViewController.swift */; };
+		8D0F4D95293846160096CBEC /* TransitioningAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D8E293846160096CBEC /* TransitioningAnimator.swift */; };
+		8D0F4D97293846A40096CBEC /* CredentialViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D96293846A40096CBEC /* CredentialViewType.swift */; };
+		8D0F4D9A293928000096CBEC /* MarginedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D99293928000096CBEC /* MarginedLabel.swift */; };
+		8D0F4D9D29395FC30096CBEC /* DeliveryPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F4D9C29395FC30096CBEC /* DeliveryPinViewModel.swift */; };
 		8D3D6E24291E0C4D00F6ED64 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D6E23291E0C4D00F6ED64 /* AuthViewModel.swift */; };
 		8D3D6E26291E0C6B00F6ED64 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D6E25291E0C6B00F6ED64 /* SignUpViewModel.swift */; };
 		8D3D6E28291E0C9F00F6ED64 /* FirestoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D6E27291E0C9F00F6ED64 /* FirestoreKeys.swift */; };
@@ -67,6 +75,14 @@
 
 /* Begin PBXFileReference section */
 		8D0F4D7D293834510096CBEC /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		8D0F4D86293846160096CBEC /* NewBottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBottomSheetViewController.swift; sourceTree = "<group>"; };
+		8D0F4D87293846160096CBEC /* BottomSheetPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationManager.swift; sourceTree = "<group>"; };
+		8D0F4D8A293846160096CBEC /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+		8D0F4D8C293846160096CBEC /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
+		8D0F4D8E293846160096CBEC /* TransitioningAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitioningAnimator.swift; sourceTree = "<group>"; };
+		8D0F4D96293846A40096CBEC /* CredentialViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialViewType.swift; sourceTree = "<group>"; };
+		8D0F4D99293928000096CBEC /* MarginedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginedLabel.swift; sourceTree = "<group>"; };
+		8D0F4D9C29395FC30096CBEC /* DeliveryPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPinViewModel.swift; sourceTree = "<group>"; };
 		8D3D6E23291E0C4D00F6ED64 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		8D3D6E25291E0C6B00F6ED64 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8D3D6E27291E0C9F00F6ED64 /* FirestoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreKeys.swift; sourceTree = "<group>"; };
@@ -144,6 +160,84 @@
 			path = ChangePassword;
 			sourceTree = "<group>";
 		};
+		8D0F4D81293846160096CBEC /* NewBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D98293927F10096CBEC /* UtilityViews */,
+				8D0F4D82293846160096CBEC /* NewViews */,
+				8D0F4D85293846160096CBEC /* Manager */,
+				8D0F4D88293846160096CBEC /* ViewControllers */,
+				8D0F4D8D293846160096CBEC /* TransitioningAnimator */,
+			);
+			path = NewBottomSheet;
+			sourceTree = "<group>";
+		};
+		8D0F4D82293846160096CBEC /* NewViews */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D96293846A40096CBEC /* CredentialViewType.swift */,
+			);
+			path = NewViews;
+			sourceTree = "<group>";
+		};
+		8D0F4D85293846160096CBEC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D86293846160096CBEC /* NewBottomSheetViewController.swift */,
+				8D0F4D87293846160096CBEC /* BottomSheetPresentationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8D0F4D88293846160096CBEC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D89293846160096CBEC /* PresentedViewController */,
+				8D0F4D8B293846160096CBEC /* PresentationViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8D0F4D89293846160096CBEC /* PresentedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D8A293846160096CBEC /* PresentedViewController.swift */,
+			);
+			path = PresentedViewController;
+			sourceTree = "<group>";
+		};
+		8D0F4D8B293846160096CBEC /* PresentationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D8C293846160096CBEC /* PresentationViewController.swift */,
+			);
+			path = PresentationViewController;
+			sourceTree = "<group>";
+		};
+		8D0F4D8D293846160096CBEC /* TransitioningAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D8E293846160096CBEC /* TransitioningAnimator.swift */,
+			);
+			path = TransitioningAnimator;
+			sourceTree = "<group>";
+		};
+		8D0F4D98293927F10096CBEC /* UtilityViews */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D99293928000096CBEC /* MarginedLabel.swift */,
+			);
+			path = UtilityViews;
+			sourceTree = "<group>";
+		};
+		8D0F4D9B29395FB90096CBEC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8D0F4D9C29395FC30096CBEC /* DeliveryPinViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8D3D6E29291E0CBD00F6ED64 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +292,7 @@
 		8D3D6E2F291E0D4700F6ED64 /* DeliveryPin */ = {
 			isa = PBXGroup;
 			children = (
+				8D0F4D9B29395FB90096CBEC /* ViewModels */,
 				8D3D6E3C291E112C00F6ED64 /* Models */,
 				8D3D6E30291E0D8300F6ED64 /* Views */,
 			);
@@ -458,6 +553,7 @@
 		C7FE754B28DD51D100C6AC17 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8D0F4D81293846160096CBEC /* NewBottomSheet */,
 				8D0F4D7C2938343D0096CBEC /* ChangePassword */,
 				8D3D6E3A291E0F9200F6ED64 /* Shared */,
 				8D3D6E2F291E0D4700F6ED64 /* DeliveryPin */,
@@ -603,6 +699,9 @@
 				8D3D6E45291E1AC500F6ED64 /* Delivery Models.swift in Sources */,
 				C7E5BB8128FA2FC000EBC4A5 /* SetDeliveryPinViewController.swift in Sources */,
 				C712A67D2900BD400029AEFF /* DeliveryViewModel.swift in Sources */,
+				8D0F4D91293846160096CBEC /* NewBottomSheetViewController.swift in Sources */,
+				8D0F4D94293846160096CBEC /* PresentationViewController.swift in Sources */,
+				8D0F4D97293846A40096CBEC /* CredentialViewType.swift in Sources */,
 				8DDFFB08291F056D00A3BD86 /* HistoryViewController.swift in Sources */,
 				8D3D6E26291E0C6B00F6ED64 /* SignUpViewModel.swift in Sources */,
 				8DDFFB11291F0FCC00A3BD86 /* HistoryCellViewModel.swift in Sources */,
@@ -613,7 +712,9 @@
 				8D3D6E24291E0C4D00F6ED64 /* AuthViewModel.swift in Sources */,
 				8D0F4D7E293834510096CBEC /* ChangePasswordViewController.swift in Sources */,
 				8D3D6E28291E0C9F00F6ED64 /* FirestoreKeys.swift in Sources */,
+				8D0F4D9A293928000096CBEC /* MarginedLabel.swift in Sources */,
 				C7FE753828DD51C500C6AC17 /* AppDelegate.swift in Sources */,
+				8D0F4D95293846160096CBEC /* TransitioningAnimator.swift in Sources */,
 				C720B1CC2905CBEA004CB373 /* Logger.swift in Sources */,
 				8DDFFB0F291F093D00A3BD86 /* HistoryViewModel.swift in Sources */,
 				C7FE755428DD526800C6AC17 /* SetMPinViewController.swift in Sources */,
@@ -623,6 +724,9 @@
 				8DDFFB21291F837300A3BD86 /* LoginViewModel.swift in Sources */,
 				8DDFFB1F291F640100A3BD86 /* ShowDeliveryOrderViewModel.swift in Sources */,
 				8DDFFB14291F433200A3BD86 /* HistoryCollectionViewCell.swift in Sources */,
+				8D0F4D92293846160096CBEC /* BottomSheetPresentationManager.swift in Sources */,
+				8D0F4D9D29395FC30096CBEC /* DeliveryPinViewModel.swift in Sources */,
+				8D0F4D93293846160096CBEC /* PresentedViewController.swift in Sources */,
 				C7FE754F28DD51F100C6AC17 /* LoginViewController.swift in Sources */,
 				C7E5BB8528FA44DB00EBC4A5 /* Extensions.swift in Sources */,
 				C7FE754D28DD51E700C6AC17 /* LaunchViewController.swift in Sources */,

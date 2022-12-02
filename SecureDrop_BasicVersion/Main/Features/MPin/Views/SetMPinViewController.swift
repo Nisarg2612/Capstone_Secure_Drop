@@ -38,7 +38,6 @@ class SetMPinViewController: UIViewController, Storyboarded {
         setupPinTextField()
 		setupView()
     }
-   
     func isValidPasscode() -> String? {
         let errorMsg: String =             """
                                         Error: Invalid Passcode.
@@ -171,7 +170,7 @@ extension SetMPinViewController: SetMPinViewResponder {
 				self.viewModel.coordinator.pushView(setDeliveryVC)
 			} else {
 				let setDeliveryVC = SetDeliveryPinViewController.instantiate() as SetDeliveryPinViewController
-				setDeliveryVC.viewModel = DeliveryViewModel()
+				setDeliveryVC.viewModel = DeliveryPinViewModel()
 				self.viewModel.coordinator.pushView(setDeliveryVC)
 			}
 		}

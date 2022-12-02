@@ -122,7 +122,8 @@ extension DeliveryViewModel: DeliveryBusinessLogic {
             let result: Result<Bool, Error>
             guard let username = deliveryOwner.user else {
                 result = .failure(DeliveryLogicNetworkError.missingUsername)
-                return completion(result)
+				completion(result)
+                return
             }
             guard let _ = deliveryOwner.pinAuthInfo,
                   let ownerData = try? JSONEncoder().encode(deliveryOwner),

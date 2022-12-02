@@ -36,7 +36,7 @@ extension NavigationResponderDelegate {
 	}
 }
 
-class LaunchViewController: UIViewController {
+class LaunchViewController: UIViewController, Storyboarded {
 
     @IBOutlet var launchSignUpButton: UIButton!
     @IBOutlet var launchLoginButton: UIButton!

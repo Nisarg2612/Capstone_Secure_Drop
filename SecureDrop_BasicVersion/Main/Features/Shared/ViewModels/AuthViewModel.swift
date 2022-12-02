@@ -14,6 +14,7 @@ protocol AuthBusinessLogic: AnyObject {
 	func signIn(user: AuthUser, completion: @escaping (Result<AuthDataResult, Error>) -> Void)
 	func signOut(user: AuthUser, completion: @escaping (Result<Bool, Error>) -> Void)
 	func signUp(user: AuthUser, completion: @escaping (Result<AuthDataResult, Error>) -> Void)
+	func updatePassword(with newPassword: String, completion: @escaping (Bool) -> Void)
 }
 
 
@@ -22,6 +23,8 @@ class AuthViewModel {
 }
 
 extension AuthViewModel: AuthBusinessLogic {
+	
+	
 
 	
 	
@@ -67,7 +70,26 @@ extension AuthViewModel: AuthBusinessLogic {
 								return
 							}
 					}
+		
 	}
+	
+	func updatePassword(with newPassword: String, completion: @escaping (Bool) -> Void) {
+			if let firUser = Auth.auth().currentUser {
+				firUser.updatePassword(to: newPassword) { err in
+					if let err = err {
+						Log(err.localizedDescription, .error)
+						completion(false)
+					} else {
+						Log("updated password", .debug)
+						completion(true)
+					}
+				}
+			} else {
+				completion(false)
+			}
+		
+	}
+
 }
 
 
