@@ -59,17 +59,19 @@ extension UIView {
 
 
 extension UIViewController {
-    func addLoadingIndicator() {
+	func addLoadingIndicator(toView view: UIView? = nil, color: UIColor = .black) {
+		let thisView = (view ?? self.view)!
         let loadingIndicator = UIActivityIndicatorView(style: .large)
-        loadingIndicator.color = .black
-        loadingIndicator.frame = self.view.bounds
-        self.view.addSubview(loadingIndicator)
-        loadingIndicator.anchor(top: self.view.topAnchor, right: self.view.trailingAnchor, bottom: self.view.bottomAnchor, left: self.view.leadingAnchor)
+        loadingIndicator.color = color
+        loadingIndicator.frame = thisView.bounds
+        thisView.addSubview(loadingIndicator)
+        loadingIndicator.anchor(top: thisView.topAnchor, right: thisView.trailingAnchor, bottom: thisView.bottomAnchor, left: thisView.leadingAnchor)
         loadingIndicator.isHidden = false
 		loadingIndicator.startAnimating()
     }
-    func removeLoadingIndicator() {
-        let activityIndicatorView = self.view.subviews.first { $0 is UIActivityIndicatorView } as? UIActivityIndicatorView
+	func removeLoadingIndicator(from view: UIView? = nil) {
+		let thisView = (view ?? self.view)!
+        let activityIndicatorView = thisView.subviews.first { $0 is UIActivityIndicatorView } as? UIActivityIndicatorView
 		activityIndicatorView?.stopAnimating()
         activityIndicatorView?.isHidden = true
         activityIndicatorView?.removeFromSuperview()

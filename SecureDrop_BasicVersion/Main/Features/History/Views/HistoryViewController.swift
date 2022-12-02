@@ -79,7 +79,7 @@ extension HistoryViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.reuseID, for: indexPath) as! HistoryTableViewCell
 		let deliveryOrder = self.viewModel.getDeliveryOrder(at: indexPath)!
-		cell.configure(with: HistoryCellViewModel(deliveryOrder: deliveryOrder))
+		cell.configure(with: HistoryCellViewModel(deliveryOrder: deliveryOrder, cellStyle: CellStyle.init(rawValue: indexPath.section)!))
 		return cell
 	}
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

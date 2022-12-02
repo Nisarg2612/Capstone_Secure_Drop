@@ -105,7 +105,7 @@ extension LoginViewController: LoginViewResponder {
 	func showSetDeliveryPinViewController() {
 		self.removeLoadingIndicator()
 		let setDeliveryPinVC = SetDeliveryPinViewController.instantiate() as SetDeliveryPinViewController
-			setDeliveryPinVC.viewModel = DeliveryViewModel()
+			setDeliveryPinVC.viewModel = DeliveryPinViewModel()
 		self.showViewControllerHelper(setDeliveryPinVC)
 	}
 }
