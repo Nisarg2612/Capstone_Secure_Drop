@@ -31,12 +31,14 @@ class SetMPinViewController: UIViewController, Storyboarded {
     
 	func setupView() {
 		(self.viewModel as! MPinViewModel).delegate = self
+		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
     func setup() {
         addGestureRecognizer()
         setupSetMasterPinBtn()
         setupPinTextField()
 		setupView()
+		
     }
     func isValidPasscode() -> String? {
         let errorMsg: String =             """
