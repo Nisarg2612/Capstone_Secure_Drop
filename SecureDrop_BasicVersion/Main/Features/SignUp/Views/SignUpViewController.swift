@@ -88,9 +88,9 @@ class SignUpViewController: UIViewController, Storyboarded {
 			self.errorLabel.isHidden = false
 			return
 		}
-
+		
 		let authUser = AuthUser(fullName: self.fullNameTextField.text, emailAddress: emailAddress, password: password)
-
+		
 		self.viewModel.signUp(authUser: authUser, callback: { [weak self]
 			result in
 			guard let self = self else { return }
@@ -105,20 +105,14 @@ class SignUpViewController: UIViewController, Storyboarded {
 						let alertVC = self.makeAlertVC(title: "Success", message: msg) {
 							//run on completion of showing alertVC
 							self.clearFields()
-							if let loginVC = self.viewModel.coordinator.getView(LoginViewController.self) {
-								self.viewModel.coordinator.presentView(loginVC)
-							} else {
-								let loginVC = LoginViewController.instantiate() as LoginViewController
-								loginVC.viewModel = LoginViewModel(authViewModel: AuthViewModel(), deliveryViewModel: DeliveryViewModel())
-								self.viewModel.coordinator.presentView(loginVC)
-							}
+							self.viewModel.coordinator.dismissPresentedView()
 						}
-						self.viewModel.coordinator.presentView(alertVC)
+						self.viewModel.coordinator.presentView(alertVC) 
 					} else {
 						let alertVC = self.makeAlertVC(title: "Uh Oh", message: "It Looks like we cannot create your account right now. Please contact customer support.\nThanks!")
 						self.viewModel.coordinator.presentView(alertVC)
 					}
-
+					
 				case .failure(let err):
 					let alertVC = self.makeAlertVC(title: "Error", message: "Could not create deliveryOwner.\n\(err.localizedDescription)")
 					self.removeLoadingIndicator()

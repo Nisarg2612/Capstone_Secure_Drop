@@ -40,7 +40,7 @@ class ShowDeliveryOrderViewController: UIViewController, Storyboarded {
     }
     func autoGeneratePin(completion: @escaping (_ hasSuccess: Bool?) -> Void) {
         //fake example api call
-        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1.0) {
             completion(true)
         }
     }

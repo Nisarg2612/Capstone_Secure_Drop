@@ -78,6 +78,7 @@ class ChangeCredentialView: UIView {
 		inputTextField.placeholder = viewModel.placeholder
 		inputTextField.font = .systemFont(ofSize: 20, weight: .medium)
 		inputTextField.borderStyle = .roundedRect
+		inputTextField.isSecureTextEntry = true
 	}
 	
 	func setupDescriptionLabel() {

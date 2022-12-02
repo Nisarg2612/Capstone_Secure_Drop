@@ -59,55 +59,19 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 	}
 	
 	func setupMenuNavigationItem() {
-		let historyAction = UIAction(
-			title: NSLocalizedString("History", comment:""),
-			image: UIImage(systemName:"menucard")) { historyAction in
-			//TODO: Launch history view controller
-				print("Launch history view controller")
-				//get delivery owner
-				self.viewModel.delivery.getDeliveryOwner(for: Auth.auth().currentUser!) { [weak self] deliveryOwner in
-					guard let deliveryOwner = deliveryOwner else {
-						DispatchQueue.main.async {
-							//if deliveryOwner missing, show error
-							self?.showError(title: "Error", message: "Missing Delivery Owner")
-						}
-						return
-					}
-					DispatchQueue.main.async {
-						//if deliveryOwner retreived, move to historyVC
-						self?.showHistoryViewController(for: deliveryOwner)
-					}
-				}
-		}
-		let mpinChangeAction = UIAction(
-			title: NSLocalizedString("MPIN Change", comment:""),
-			image: UIImage(systemName: "arrow.down.square")) { [unowned self] historyAction in
-			//TODO: Launch MPINChange ViewController
-				print("Launch MPINChange ViewController")
-				self.showChangeMPINViewController()
-		}
-		let passwordChangeAction = UIAction(
-			title: NSLocalizedString("Password Change", comment:""),
-			image: UIImage(systemName: "arrow.up.square")) {[unowned self] historyAction in
-			//TODO: Launch Password Change View Controller
-				print("Launch Password Change View Controller")
-				self.showChangePasswordViewController()
-		}
-		let logoutAction = UIAction(
-			title: NSLocalizedString("Log Out", comment:""),
-			image: UIImage(systemName: "arrow.down.square")) { historyAction in
-			//TODO: Launch LogOut View Controller
-				print("Launch LogOut View Controller")
-				if let launchVC = self.viewModel.coordinator.getView(LaunchViewController.self) {
-					self.viewModel.coordinator.popToView(launchVC)
-				} else {
-					_ = try? Auth.auth().signOut()
-					let launchVC = LaunchViewController.instantiate() as LaunchViewController
-					self.viewModel.coordinator.popToView(launchVC)
-				}
-		}
-		let contextMenu = UIMenu(title: "Menu", children: [historyAction, mpinChangeAction, passwordChangeAction, logoutAction])
-		let rightNavBarBtn =  UIBarButtonItem(title: "Menu", menu: contextMenu)
+		let customProfileBtn = UIButton()
+		customProfileBtn.setTitle("Profile", for: .normal)
+		customProfileBtn.setImage(UIImage(systemName: "menucard"), for: .normal)
+		customProfileBtn.setTitleColor(.systemBlue, for: .normal)
+		let contextMenuInteraction = UIContextMenuInteraction(delegate: self)
+		customProfileBtn.addInteraction(contextMenuInteraction)
+		let customBarBtnView = UIView(frame: .zero)
+		customBarBtnView.addSubview(customProfileBtn)
+		customProfileBtn.semanticContentAttribute = .forceLeftToRight
+		customProfileBtn.anchor(top: customBarBtnView.topAnchor, right: customBarBtnView.trailingAnchor, bottom: customBarBtnView.bottomAnchor, left: customBarBtnView.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -10), size: .zero)
+		let rightNavBarBtn =  UIBarButtonItem()
+		rightNavBarBtn.customView = customBarBtnView
+		
 		self.navigationItem.rightBarButtonItem = rightNavBarBtn
 	}
 	func layoutView() {
@@ -140,6 +104,7 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
         }
     }
 
+	
     @objc func setupGenerateDeliveryPinBtn() {
         self.generateDeliveryPinBtn.addTarget(self, action: #selector(didTapGenerateDeliveryPin), for: .touchUpInside)
     }
@@ -255,4 +220,60 @@ extension SetDeliveryPinViewController: CredentialViewDelegate {
 	}
 	
 	
+}
+extension SetDeliveryPinViewController: UIContextMenuInteractionDelegate {
+	func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+		return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+			
+				let historyAction = UIAction(
+					title: NSLocalizedString("History", comment:""),
+					image: UIImage(systemName:"list.bullet")) { historyAction in
+					//TODO: Launch history view controller
+						print("Launch history view controller")
+						//get delivery owner
+						self.viewModel.delivery.getDeliveryOwner(for: Auth.auth().currentUser!) { [weak self] deliveryOwner in
+							guard let deliveryOwner = deliveryOwner else {
+								DispatchQueue.main.async {
+									//if deliveryOwner missing, show error
+									self?.showError(title: "Error", message: "Missing Delivery Owner")
+								}
+								return
+							}
+							DispatchQueue.main.async {
+								//if deliveryOwner retreived, move to historyVC
+								self?.showHistoryViewController(for: deliveryOwner)
+							}
+						}
+				}
+				let mpinChangeAction = UIAction(
+					title: NSLocalizedString("MPIN Change", comment:""),
+					image: UIImage(systemName: "pencil")) { [unowned self] historyAction in
+					//TODO: Launch MPINChange ViewController
+						print("Launch MPINChange ViewController")
+						self.showChangeMPINViewController()
+				}
+				let passwordChangeAction = UIAction(
+					title: NSLocalizedString("Password Change", comment:""),
+					image: UIImage(systemName: "key")) {[unowned self] historyAction in
+					//TODO: Launch Password Change View Controller
+						print("Launch Password Change View Controller")
+						self.showChangePasswordViewController()
+				}
+				let logoutAction = UIAction(
+					title: NSLocalizedString("Log Out", comment:""),
+					image: UIImage(systemName: "door.right.hand.open")) { historyAction in
+					//TODO: Launch LogOut View Controller
+						print("Launch LogOut View Controller")
+						if let launchVC = self.viewModel.coordinator.getView(LaunchViewController.self) {
+							self.viewModel.coordinator.popToView(launchVC)
+						} else {
+							_ = try? Auth.auth().signOut()
+							let launchVC = LaunchViewController.instantiate() as LaunchViewController
+							self.viewModel.coordinator.popToView(launchVC)
+						}
+				}
+				let contextMenu = UIMenu(title: "Profile Menu", children: [historyAction, mpinChangeAction, passwordChangeAction, logoutAction])
+			return contextMenu
+		}
+	}
 }

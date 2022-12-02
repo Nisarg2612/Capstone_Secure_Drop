@@ -67,6 +67,8 @@ class Coordinator: NavigationResponderDelegate {
        }
 	   func hideBackButton(_ shouldHide: Bool) {
 		   self.navigationController.navigationItem.setHidesBackButton(shouldHide, animated: true)
+		   self.navigationController.navigationBar.backItem!.setHidesBackButton(shouldHide, animated: true)
+		   self.navigationController.navigationBar.backItem!.hidesBackButton = shouldHide
 	   }
     private init(navigationController: UINavigationController) {
         self.navigationController = navigationController

@@ -29,7 +29,7 @@ class PresentationViewController: UIPresentationController {
         shadowView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         if let shadowView = self.containerView?.subviews.first, let transitionCoordinator = self.presentedViewController.transitionCoordinator {
             transitionCoordinator.animate { (transitionCoordContext) in
-                shadowView.layer.opacity = 0.9
+                shadowView.layer.opacity = 0.8
             }
 
         }
