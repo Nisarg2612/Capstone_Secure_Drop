@@ -110,11 +110,15 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 		let rightNavBarBtn =  UIBarButtonItem(title: "Menu", menu: contextMenu)
 		self.navigationItem.rightBarButtonItem = rightNavBarBtn
 	}
+	func layoutView() {
+		self.viewModel.coordinator.hideBackButton(true)
+	}
     func setup() {
         setupGenerateDeliveryPinBtn()
         setupUsernameLabel()
         setupMPINLable()
 		setupMenuNavigationItem()
+		layoutView()
     }
     func setupMPINLable() {
 		var mPin = "????"

@@ -24,7 +24,7 @@ enum CellStyle: Int {
 	
 	var color: UIColor {
 		switch self {
-			case .current: return .blue
+			case .current: return UIColor.init(displayP3Red: 0, green: 102/255, blue: 0, alpha: 1)
 			case .past: return .red
 		}
 	}

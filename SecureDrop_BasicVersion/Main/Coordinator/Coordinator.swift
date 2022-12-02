@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class Coordinator: NavigationResponderDelegate {
-	
 	static let shared = Coordinator(navigationController: UINavigationController())
 	private var navigationController: UINavigationController
 
@@ -66,6 +65,9 @@ class Coordinator: NavigationResponderDelegate {
            self.navigationController.visibleViewController?.presentedViewController?.dismiss(animated: true)
 		   completion?()
        }
+	   func hideBackButton(_ shouldHide: Bool) {
+		   self.navigationController.navigationItem.setHidesBackButton(shouldHide, animated: true)
+	   }
     private init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }

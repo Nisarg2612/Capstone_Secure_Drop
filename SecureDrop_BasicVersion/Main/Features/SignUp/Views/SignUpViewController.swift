@@ -72,63 +72,61 @@ class SignUpViewController: UIViewController, Storyboarded {
 		return (emailAddress, password)
 	}
 	@IBAction func signUpTapped(_ sender: Any) {
-		let alertVC = self.makeAlertVC(title: "Error", message: "Could not create deliveryOwner.\n")
-		self.viewModel.coordinator.presentView(alertVC)
-//			//proceed to signUp flow
-//		self.errorLabel.isHidden = true
-//		self.addLoadingIndicator()
-//		guard let (emailAddress, password) = getEmailAndPassword() else {
-//            self.removeLoadingIndicator()
-//            self.errorLabel.text = "Please enter an email and password"
-//            self.errorLabel.isHidden = false
-//            return
-//        }
-//		guard let confirmPassword = self.confirmPasswordTextField.text, password == confirmPassword else {
-//            self.removeLoadingIndicator()
-//			self.errorLabel.text = "Please make sure your password matches the confirm password field"
-//			print("Error: Please make sure your password matches the confirm password field")
-//			self.errorLabel.isHidden = false
-//			return
-//		}
-//
-//		let authUser = AuthUser(fullName: self.fullNameTextField.text, emailAddress: emailAddress, password: password)
-//
-//		self.viewModel.signUp(authUser: authUser, callback: { [weak self]
-//			result in
-//			guard let self = self else { return }
-//			self.removeLoadingIndicator()
-//			switch result {
-//				case .success(let didCreateUser):
-//					if didCreateUser {
-//						let msg =   """
-//									Created new user!
-//									username: \(authUser.emailAddress)
-//									"""
-//						let alertVC = self.makeAlertVC(title: "Success", message: msg) {
-//							//run on completion of showing alertVC
-//							self.clearFields()
-//							if let loginVC = self.viewModel.coordinator.getView(LoginViewController.self) {
-//								self.viewModel.coordinator.presentView(loginVC)
-//							} else {
-//								let loginVC = LoginViewController.instantiate() as LoginViewController
-//								loginVC.viewModel = LoginViewModel(authViewModel: AuthViewModel(), deliveryViewModel: DeliveryViewModel())
-//								self.viewModel.coordinator.presentView(loginVC)
-//							}
-//						}
-//						self.viewModel.coordinator.presentView(alertVC)
-//					} else {
-//						let alertVC = self.makeAlertVC(title: "Uh Oh", message: "It Looks like we cannot create your account right now. Please contact customer support.\nThanks!")
-//						self.viewModel.coordinator.presentView(alertVC)
-//					}
-//
-//				case .failure(let err):
-//					let alertVC = self.makeAlertVC(title: "Error", message: "Could not create deliveryOwner.\n\(err.localizedDescription)")
-//					self.removeLoadingIndicator()
-//					self.viewModel.coordinator.presentView(alertVC)
-//					self.errorLabel.text = err.localizedDescription
-//					self.errorLabel.isHidden = false
-//			}
-//		})
+			//proceed to signUp flow
+		self.errorLabel.isHidden = true
+		self.addLoadingIndicator()
+		guard let (emailAddress, password) = getEmailAndPassword() else {
+            self.removeLoadingIndicator()
+            self.errorLabel.text = "Please enter an email and password"
+            self.errorLabel.isHidden = false
+            return
+        }
+		guard let confirmPassword = self.confirmPasswordTextField.text, password == confirmPassword else {
+            self.removeLoadingIndicator()
+			self.errorLabel.text = "Please make sure your password matches the confirm password field"
+			print("Error: Please make sure your password matches the confirm password field")
+			self.errorLabel.isHidden = false
+			return
+		}
+
+		let authUser = AuthUser(fullName: self.fullNameTextField.text, emailAddress: emailAddress, password: password)
+
+		self.viewModel.signUp(authUser: authUser, callback: { [weak self]
+			result in
+			guard let self = self else { return }
+			self.removeLoadingIndicator()
+			switch result {
+				case .success(let didCreateUser):
+					if didCreateUser {
+						let msg =   """
+									Created new user!
+									username: \(authUser.emailAddress)
+									"""
+						let alertVC = self.makeAlertVC(title: "Success", message: msg) {
+							//run on completion of showing alertVC
+							self.clearFields()
+							if let loginVC = self.viewModel.coordinator.getView(LoginViewController.self) {
+								self.viewModel.coordinator.presentView(loginVC)
+							} else {
+								let loginVC = LoginViewController.instantiate() as LoginViewController
+								loginVC.viewModel = LoginViewModel(authViewModel: AuthViewModel(), deliveryViewModel: DeliveryViewModel())
+								self.viewModel.coordinator.presentView(loginVC)
+							}
+						}
+						self.viewModel.coordinator.presentView(alertVC)
+					} else {
+						let alertVC = self.makeAlertVC(title: "Uh Oh", message: "It Looks like we cannot create your account right now. Please contact customer support.\nThanks!")
+						self.viewModel.coordinator.presentView(alertVC)
+					}
+
+				case .failure(let err):
+					let alertVC = self.makeAlertVC(title: "Error", message: "Could not create deliveryOwner.\n\(err.localizedDescription)")
+					self.removeLoadingIndicator()
+					self.viewModel.coordinator.presentView(alertVC)
+					self.errorLabel.text = err.localizedDescription
+					self.errorLabel.isHidden = false
+			}
+		})
 	}
 	@IBAction func loginTapped(_ sender: UIButton) {
 		

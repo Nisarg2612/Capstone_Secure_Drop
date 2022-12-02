@@ -9,6 +9,7 @@ import UIKit
 
 
 protocol NavigationResponderDelegate: AnyObject {
+	func hideBackButton(_ shouldHide: Bool)
     func dismissPresentedView(completion: (() -> Void)?)
     func dismiss(_ viewController: UIViewController, completion: (() -> Void)?)
     func popView(_ viewController: UIViewController)
