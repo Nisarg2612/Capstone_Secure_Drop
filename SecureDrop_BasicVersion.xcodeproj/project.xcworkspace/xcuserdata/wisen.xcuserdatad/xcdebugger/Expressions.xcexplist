@@ -3,9 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Coordinator.updateNavigationController(with:):Coordinator.swift">
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in SignUpViewController.loginTapped(_:):SignUpViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -14,10 +11,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "Coordinator.updateNavigationController(with:):Coordinator.swift">
+      </ContextState>
+      <ContextState
          contextName = "DeliveryViewModel.getDeliveryOwner(for:completion:):DeliveryViewModel.swift">
          <PersistentStrings>
             <PersistentString
                value = "db.collection(FirestoreKeys.users.description).document(email)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistoryViewController.tableView(_:cellForRowAt:):HistoryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.section">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

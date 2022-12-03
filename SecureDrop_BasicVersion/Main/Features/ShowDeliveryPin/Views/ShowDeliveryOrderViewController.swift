@@ -85,7 +85,9 @@ class ShowDeliveryOrderViewController: UIViewController, Storyboarded {
     }
     func generateDeliveryPin() -> String {
         let result = Array(repeating: "", count: 4)
-        return result.map { _ in "\(Int.random(in: 0...9))" }.joined()
+		var strDeliveryPin = result.map { _ in "\(Int.random(in: 0...9))" }.joined()
+		strDeliveryPin = strDeliveryPin.count < 4 ? "0\(strDeliveryPin)" : strDeliveryPin
+        return strDeliveryPin
     }
     func setupOrderDetailsTextView() {
 		orderDetailsTextView.layer.masksToBounds = true
