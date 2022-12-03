@@ -78,6 +78,7 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
     func setup() {
+		addKeyboardNotifications()
         setupGenerateDeliveryPinBtn()
         setupUsernameLabel()
         setupMPINLable()
@@ -104,6 +105,11 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
         }
     }
 
+	func addKeyboardNotifications() {
+		NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
+	
 	
     @objc func setupGenerateDeliveryPinBtn() {
         self.generateDeliveryPinBtn.addTarget(self, action: #selector(didTapGenerateDeliveryPin), for: .touchUpInside)
@@ -113,6 +119,20 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 		showDeliveryPinVC.viewModel = ShowDeliveryOrderViewModel(deliveryViewModel: DeliveryViewModel())
         self.viewModel.coordinator.pushView(showDeliveryPinVC)
     }
+	@objc func showKeyboard(notificaiton: Notification) {
+		guard let bottomSheetVC = bottomSheetVC else { return }
+		let endFrame = (notificaiton.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+		UIView.animate(withDuration: 1.0) {
+			bottomSheetVC.view.bounds.origin.y += endFrame.height
+		}
+	}
+	@objc func hideKeyboard(notificaiton: Notification) {
+		guard let bottomSheetVC = bottomSheetVC else { return }
+		let endFrame = (notificaiton.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+		UIView.animate(withDuration: 1.0) {
+			bottomSheetVC.view.bounds.origin.y = 0
+		}
+	}
 }
 extension SetDeliveryPinViewController: SetDeliveryPinViewResponder {
 	func showChangeMPINViewController() {
