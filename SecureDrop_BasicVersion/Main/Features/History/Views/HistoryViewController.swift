@@ -15,6 +15,7 @@ protocol HistoryViewResponder {
 }
 class HistoryViewController: UIViewController {
 	var historyTableView = UITableView(frame: .zero)
+	var refreshControl = UIRefreshControl()
 	var viewModel: HistoryBusinessLogic!
 	
 	//configure
@@ -38,8 +39,14 @@ class HistoryViewController: UIViewController {
 		self.historyTableView.dataSource = self
 		self.historyTableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: HistoryTableViewCell.reuseID)
 	}
+	func addRefreshControl() {
+		self.refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+		self.historyTableView.refreshControl = self.refreshControl
+		
+	}
 	func setup() {
 		setupHistoryTableView()
+		addRefreshControl()
 		setupView()
 	}
 	
@@ -108,5 +115,12 @@ extension HistoryViewController: HistoryViewResponder {
 }
 
 
+//MARK: - Target Action Methods
+extension HistoryViewController {
+	@objc func didRefresh() {
+		self.configure(historyViewModel: self.viewModel)
+		self.historyTableView.refreshControl?.endRefreshing()
+	}
+}
 
 
