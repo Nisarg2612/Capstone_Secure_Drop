@@ -68,7 +68,7 @@ extension LoginViewModel: LoginBusinessLogic {
 					//if success, check MPIN. if not present..
 				guard let mPin = deliveryOwner.pinAuthInfo?.mPin else {
 						//...set mPin to 0
-					deliveryOwner.pinAuthInfo?.mPin = 0
+					deliveryOwner.pinAuthInfo?.mPin = "0000"
 					self.delivery.updateMPin(deliveryOwner: deliveryOwner) { result in
 						DispatchQueue.main.async {
 							let didUpdate = (try? result.get()) ?? false
@@ -85,7 +85,7 @@ extension LoginViewModel: LoginBusinessLogic {
 				}
 				
 					//if MPIN is == 0 show SetMPinViewController
-				if mPin == 0 {
+				if mPin == "0000" || mPin == "0" {
 					DispatchQueue.main.async {
 						self.delegate?.showSetMPinViewController()
 					}

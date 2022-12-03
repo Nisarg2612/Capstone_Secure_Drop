@@ -16,7 +16,7 @@ struct DeliveryOwner: Codable {
 }
 
 struct PinAuthInfo: Codable {
-    var mPin: Int?
+    var mPin: String?
 }
 
 struct DeliveryOrder: Codable {

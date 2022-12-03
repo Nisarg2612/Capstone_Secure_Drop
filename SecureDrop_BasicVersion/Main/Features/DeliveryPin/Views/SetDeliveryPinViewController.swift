@@ -91,7 +91,7 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 			return
 		}
 		viewModel?.delivery.getDeliveryOwner(for: firUser) { deliveryOwner in
-			mPin = deliveryOwner?.pinAuthInfo?.mPin?.toString ?? "\(mPin)"
+			mPin = deliveryOwner?.pinAuthInfo?.mPin ?? "\(mPin)"
 			self.mpinLabel.text = mPin
 		}
         
@@ -185,11 +185,8 @@ extension SetDeliveryPinViewController: CredentialViewDelegate {
 					self.showError(title: "Error", message: "Missing Firebase User. Please log out & log back in. Thanks!")
 					return
 				}
-				guard let newMPIN_Int = newCredential.toInt else {
-					self.showError(title: "Error", message: "Invalid New MPIN Entered.")
-					return
-				}
-				self.viewModel.updateMPin(firUser: firUser, newMPIN: newMPIN_Int) { [unowned self] result in
+				
+				self.viewModel.updateMPin(firUser: firUser, newMPIN: newCredential) { [unowned self] result in
 					switch result {
 						case .success(let didUpdate):
 							if didUpdate {

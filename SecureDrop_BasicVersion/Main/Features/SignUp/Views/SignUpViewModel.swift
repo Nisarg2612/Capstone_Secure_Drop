@@ -42,7 +42,7 @@ class SignUpViewModel {
 				//			let _ = semaphore.wait(timeout: .now() + timeout)
 			semaphore.wait()
 				//launch second request
-			let pinAuthInfo = PinAuthInfo(mPin: 0)
+			let pinAuthInfo = PinAuthInfo(mPin: "0000")
 			let newDeliveryOwner = self.delivery.makeNewDeliveryOwner(firebaseUser: newFirUser, pinAuthInfo: pinAuthInfo)
 			
 			self.delivery.addNewDeliveryOwnerToDatabase(newDeliveryOwner) { result in
