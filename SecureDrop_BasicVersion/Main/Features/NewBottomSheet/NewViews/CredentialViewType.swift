@@ -79,6 +79,7 @@ class ChangeCredentialView: UIView {
 		inputTextField.font = .systemFont(ofSize: 20, weight: .medium)
 		inputTextField.borderStyle = .roundedRect
 		inputTextField.isSecureTextEntry = true
+		inputTextField.keyboardType = viewType == .MPIN ? .numberPad : .default
 	}
 	
 	func setupDescriptionLabel() {

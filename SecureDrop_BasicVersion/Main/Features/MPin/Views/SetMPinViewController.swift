@@ -73,8 +73,8 @@ class SetMPinViewController: UIViewController, Storyboarded {
 		}
 		return firUser
 	}
-	func getValidMPin() -> Int? {
-		guard let mPin = self.isValidPasscode()?.toInt else {
+	func getValidMPin() -> String? {
+		guard let mPin = self.isValidPasscode() else {
 			self.removeLoadingIndicator()
 			let errMsg = "Please enter matching MPIN's for your primary and validation fields"
 			self.showError(title: "Error", message: errMsg)
@@ -82,11 +82,33 @@ class SetMPinViewController: UIViewController, Storyboarded {
 		}
 		return mPin
 	}
+	func hasLeadingZeros() -> Bool {
+		guard let first = self.pinTextField.text?.first, first == "0" else {
+			return false
+		}
+		return true
+	}
+	func hasNonDigitCharacters() -> Bool {
+		guard let text = self.pinTextField.text else {
+			return false
+		}
+		let hasNonDigitChar = text.contains("\\D")
+		return hasNonDigitChar
+	}
 	
     @objc func didTapSetMasterPinBtn() {
 		self.addLoadingIndicator()
 		Log("didTap: \(#function)", .debug)
 		guard let mPin = getValidMPin() else { return }
+		guard !self.hasLeadingZeros() else {
+			self.showError(title: "Error", message: "Please do not start an MPIN with a 0. Thanks!")
+			return
+		}
+		guard !self.hasNonDigitCharacters() else {
+			self.showError(title: "Error", message: "An MPIN should only contain number digits, 0 - 9. Thanks!")
+			return
+		}
+		
 		guard let firUser = getFirbaseUser() else { return }
 		self.viewModel.setMasterPin(firUser: firUser, mPin: mPin)
     }

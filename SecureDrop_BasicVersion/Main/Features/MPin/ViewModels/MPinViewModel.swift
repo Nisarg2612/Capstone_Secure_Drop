@@ -11,7 +11,7 @@ import FirebaseAuth
 
 protocol MPinBusinessLogic {
 	var coordinator: NavigationResponderDelegate { get }
-	func setMasterPin(firUser: User, mPin: Int)
+	func setMasterPin(firUser: User, mPin: String)
 }
 
 class MPinViewModel {
@@ -24,7 +24,7 @@ class MPinViewModel {
 	}
 }
 extension MPinViewModel: MPinBusinessLogic {
-	func setMasterPin(firUser: User, mPin: Int) {
+	func setMasterPin(firUser: User, mPin: String) {
 		DispatchQueue.global(qos: .userInteractive).async {
 			
 			let semaphore = DispatchSemaphore(value: 0)

@@ -21,10 +21,10 @@ class DeliveryBusinessLogicTest: XCTestCase {
     let sut = MockDeliveryBusinessLogic()
     func test_addNewOrder_To_Firestore_Database() {
         //build delivery order for currentOrders array
-        let deliveryOrder = DeliveryOrder(deliveryPin: 5678, orderID: "AIDJRF8F6DHDIFF4", orderDetails: "Custom order details for this order", status: 0)
+		let deliveryOrder = DeliveryOrder(deliveryPin: "5678", orderID: "AIDJRF8F6DHDIFF4", orderDetails: "Custom order details for this order", vendorDetails: "wekdklewmdlwekd")
         //build delivery order for addOrder call, add, modify or update orderes
         let username = TestableFirebaseConst.username.description
-        let deliveryOwner = DeliveryOwner(user: username, pinAuthInfo: PinAuthInfo(mPin: 1234), pastOrders: [], currentOrders: [deliveryOrder])
+        let deliveryOwner = DeliveryOwner(user: username, pinAuthInfo: PinAuthInfo(mPin: "1234"), pastOrders: [], currentOrders: [deliveryOrder])
         
         let deliveryExpectation = XCTestExpectation(description: "Should add a new order to the firebase database, and return with acknowledgement")
         deliveryExpectation.expectedFulfillmentCount = 1

@@ -12,7 +12,7 @@ import FirebaseAuth
 protocol DeliveryPinViewModelProtocol {
 	var delivery: DeliveryBusinessLogic { get }
 	var coordinator: Coordinator { get } 
-	func updateMPin(firUser: User, newMPIN: Int, completion: @escaping (Result<Bool, Error>) -> Void)
+	func updateMPin(firUser: User, newMPIN: String, completion: @escaping (Result<Bool, Error>) -> Void)
 	func updatePassword(with newPassword: String, completion: @escaping (Bool) -> Void)
 }
 
@@ -24,7 +24,7 @@ class DeliveryPinViewModel {
 
 extension DeliveryPinViewModel: DeliveryPinViewModelProtocol {
 	
-	func updateMPin(firUser: User, newMPIN: Int, completion: @escaping (Result<Bool, Error>) -> Void) {
+	func updateMPin(firUser: User, newMPIN: String, completion: @escaping (Result<Bool, Error>) -> Void) {
 		
 		DispatchQueue.global(qos: .userInteractive).async {
 			var currentDeliveryOwner: DeliveryOwner?
