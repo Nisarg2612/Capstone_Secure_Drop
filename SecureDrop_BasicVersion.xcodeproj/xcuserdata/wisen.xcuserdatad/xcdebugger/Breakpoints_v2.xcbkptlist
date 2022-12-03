@@ -7,17 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B0ECF5A3-673C-43A8-8E22-18F98D3DC83B"
-            shouldBeEnabled = "No"
-            condition = "strDeliveryPin.count &lt; 4"
+            uuid = "7AFC7DB7-C441-4553-8EC3-5D98895D4FD4"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SecureDrop_BasicVersion/Main/Features/ShowDeliveryPin/Views/ShowDeliveryOrderViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "generateDeliveryPin()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "makeDeliveryOrder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7AFC7DB7-C441-4553-8EC3-5D98895D4FD4 - fc487716a056b393"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.ShowDeliveryOrderViewController.makeDeliveryOrder() -&gt; Swift.Optional&lt;SecureDrop_BasicVersion.DeliveryOrder&gt;"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wisen/Documents/Wyzant%20Projects/Suman/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Main/Features/ShowDeliveryPin/Views/ShowDeliveryOrderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "7AFC7DB7-C441-4553-8EC3-5D98895D4FD4 - fc487716a056b393"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecureDrop_BasicVersion.ShowDeliveryOrderViewController.makeDeliveryOrder() -&gt; Swift.Optional&lt;SecureDrop_BasicVersion.DeliveryOrder&gt;"
+                  moduleName = "SecureDrop_BasicVersion"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wisen/Documents/Wyzant%20Projects/Suman/SecureDrop_BasicVersion/SecureDrop_BasicVersion/Main/Features/ShowDeliveryPin/Views/ShowDeliveryOrderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "089E6F09-624A-4B99-9B2C-522C3E9BAF09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecureDrop_BasicVersion/Main/Features/ShowDeliveryPin/Views/ShowDeliveryOrderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "hasEmptyTextFields()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

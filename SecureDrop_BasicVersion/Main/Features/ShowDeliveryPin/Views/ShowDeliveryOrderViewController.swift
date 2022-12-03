@@ -45,13 +45,23 @@ class ShowDeliveryOrderViewController: UIViewController, Storyboarded {
         }
     }
 	
+	func hasEmptyTextFields() -> Bool {
+		let missingDeliveryPin = self.deliveryPinTextField.text?.isEmpty ?? true
+		let missingVendorDetails = self.vendorDetailsTextField.text?.isEmpty ?? true
+		return missingDeliveryPin || missingVendorDetails
+	}
 	
 	func makeDeliveryOrder() -> DeliveryOrder? {
+		guard !self.hasEmptyTextFields() else {
+			self.showError(title: "Error", message: "Please enter the required information to create your Delivery Order. Thanks!")
+			return nil
+		}
 		guard let deliveryPin = self.deliveryPinTextField.text,
 			  let orderID = self.orderIDTextField.text,
 			  let orderDetails = self.orderDetailsTextView.text,
 			  let vendorDetails = self.vendorDetailsTextField.text
 		else {
+			Log("Silent Failure. Cannot unwrap DeliveryOrder textField. Please see: \(#function)", .error)
 			return nil
 		}
 		let deliveryOrder = viewModel.delivery
