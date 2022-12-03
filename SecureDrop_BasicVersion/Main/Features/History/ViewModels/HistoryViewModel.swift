@@ -27,6 +27,7 @@ class HistoryViewModel {
 			}
 		}
 	}
+	
 	var coordinator: NavigationResponderDelegate = Coordinator.shared
 	var deliveryOrders: [[DeliveryOrder]] = [[]]
 	var delegate: HistoryViewResponder?
@@ -42,8 +43,9 @@ extension HistoryViewModel: HistoryBusinessLogic {
 	
 
 	func downloadDeliveryOrders() {
-		deliveryOrders.append(deliveryOwner.currentOrders ?? [])
-		deliveryOrders.append(deliveryOwner.pastOrders ?? [])
+		var orders = [deliveryOwner.pastOrders ?? []]
+		orders.append(deliveryOwner.currentOrders ?? [])
+		self.deliveryOrders = orders
 		self.delegate?.reloadDeliveryOrders()
 	}
 	

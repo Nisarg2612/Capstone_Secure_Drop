@@ -47,7 +47,7 @@ class ShowDeliveryOrderViewController: UIViewController, Storyboarded {
 	
 	
 	func makeDeliveryOrder() -> DeliveryOrder? {
-		guard let deliveryPin = self.deliveryPinTextField.text?.toInt,
+		guard let deliveryPin = self.deliveryPinTextField.text,
 			  let orderID = self.orderIDTextField.text,
 			  let orderDetails = self.orderDetailsTextView.text,
 			  let vendorDetails = self.vendorDetailsTextField.text

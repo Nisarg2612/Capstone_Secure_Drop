@@ -7,38 +7,18 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "48289B33-35FD-4E77-BD41-69E9202DC455"
+            uuid = "B0ECF5A3-673C-43A8-8E22-18F98D3DC83B"
             shouldBeEnabled = "No"
+            condition = "strDeliveryPin.count &lt; 4"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SecureDrop_BasicVersion/Main/Features/History/Views/HistoryViewController.swift"
+            filePath = "SecureDrop_BasicVersion/Main/Features/ShowDeliveryPin/Views/ShowDeliveryOrderViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "generateDeliveryPin()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
-         <BreakpointContent
-            uuid = "326217DC-429D-4BAF-B93B-D54B6D5A0060"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            uuid = "743E0078-29CB-49F2-9625-E0A594261D12"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            breakpointStackSelectionBehavior = "1"
-            scope = "1"
-            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -11,7 +11,7 @@ import UIKit
 protocol HistoryCellBusinessLogic {
 	var cellStyle: CellStyle { get }
 	func configure(with deliveryOrder: DeliveryOrder)
-	func getDeliveryPin() -> Int
+	func getDeliveryPin() -> String
 	func getOrderID() -> String
 	func getOrderDetails() -> String
 	func getOrderStatus() -> String
@@ -43,8 +43,8 @@ extension HistoryCellViewModel: HistoryCellBusinessLogic {
 		"NO STATUS"
 	}
 	
-	func getDeliveryPin() -> Int {
-		self.deliveryOrder.deliveryPin ?? -1
+	func getDeliveryPin() -> String {
+		self.deliveryOrder.deliveryPin ?? "\(-1)"
 	}
 	
 	func getOrderID() -> String {

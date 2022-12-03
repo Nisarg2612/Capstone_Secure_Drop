@@ -15,7 +15,7 @@ import Firebase
 protocol DeliveryBusinessLogic: AnyObject {
 	var coordinator: NavigationResponderDelegate { get }
 	func getDeliveryOwner(for firbaseUser: User, completion: @escaping (DeliveryOwner?) -> Void)
-	func makeNewDeliveryOrder(deliveryPin: Int, orderID: String, orderDetails: String, vendorDetails: String) -> DeliveryOrder
+	func makeNewDeliveryOrder(deliveryPin: String, orderID: String, orderDetails: String, vendorDetails: String) -> DeliveryOrder
 	func makeNewDeliveryOwner(firebaseUser: User, pinAuthInfo: PinAuthInfo) -> DeliveryOwner
 	func addNewDeliveryOwnerToDatabase(_ deliveryOwner: DeliveryOwner, completion: @escaping (Result<Bool, Error>)->Void)
 	func updateDeliveryOrder(_ deliveryOrder: DeliveryOrder, for deliveryOwner: DeliveryOwner, skipModification: Bool, completion: @escaping (Result<Bool, Error>) -> Void)
@@ -33,7 +33,7 @@ class DeliveryViewModel {
 extension DeliveryViewModel: DeliveryBusinessLogic {
     
 
-	func makeNewDeliveryOrder(deliveryPin: Int, orderID: String, orderDetails: String, vendorDetails: String) -> DeliveryOrder {
+	func makeNewDeliveryOrder(deliveryPin: String, orderID: String, orderDetails: String, vendorDetails: String) -> DeliveryOrder {
 		return DeliveryOrder(deliveryPin: deliveryPin, orderID: orderID, orderDetails: orderDetails, vendorDetails: vendorDetails)
 	}
     
