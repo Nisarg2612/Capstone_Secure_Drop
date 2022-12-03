@@ -128,7 +128,6 @@ class SetDeliveryPinViewController: UIViewController, Storyboarded {
 	}
 	@objc func hideKeyboard(notificaiton: Notification) {
 		guard let bottomSheetVC = bottomSheetVC else { return }
-		let endFrame = (notificaiton.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 		UIView.animate(withDuration: 1.0) {
 			bottomSheetVC.view.bounds.origin.y = 0
 		}
