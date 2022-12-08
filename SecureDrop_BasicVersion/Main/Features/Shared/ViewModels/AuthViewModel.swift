@@ -15,6 +15,7 @@ protocol AuthBusinessLogic: AnyObject {
 	func signOut(user: AuthUser, completion: @escaping (Result<Bool, Error>) -> Void)
 	func signUp(user: AuthUser, completion: @escaping (Result<AuthDataResult, Error>) -> Void)
 	func updatePassword(with newPassword: String, completion: @escaping (Bool) -> Void)
+	func resetPassword(for email: String, completion: @escaping (Error?) -> Void)
 }
 
 
@@ -23,11 +24,6 @@ class AuthViewModel {
 }
 
 extension AuthViewModel: AuthBusinessLogic {
-	
-	
-
-	
-	
 	func signIn(user: AuthUser, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
 		Auth.auth().signIn(withEmail: user.emailAddress, password: user.password) { result, err in
 							if let err = err {
@@ -47,7 +43,6 @@ extension AuthViewModel: AuthBusinessLogic {
 							
 						}
 	}
-	
 	func signOut(user: AuthUser, completion: @escaping (Result<Bool, Error>) -> Void) {
 		do {
 				try Auth.auth().signOut()
@@ -56,7 +51,6 @@ extension AuthViewModel: AuthBusinessLogic {
 				completion(.failure(err))
 			}
 	}
-	
 	func signUp(user: AuthUser, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
 		Auth.auth().createUser(withEmail: user.emailAddress,
 							   password: user.password) { authResult, err in
@@ -72,7 +66,6 @@ extension AuthViewModel: AuthBusinessLogic {
 					}
 		
 	}
-	
 	func updatePassword(with newPassword: String, completion: @escaping (Bool) -> Void) {
 			if let firUser = Auth.auth().currentUser {
 				firUser.updatePassword(to: newPassword) { err in
@@ -89,8 +82,24 @@ extension AuthViewModel: AuthBusinessLogic {
 			}
 		
 	}
-
+	func resetPassword(for email: String, completion: @escaping (Error?) -> Void) {
+		Auth.auth().sendPasswordReset(withEmail: email) { err in
+			if let err = err {
+				completion(err)
+			} else {
+				completion(nil)
+			}
+		}
+	}
+	
 }
 
-
-
+enum AuthViewModelError: Error {
+	case client(String)
+	
+	var description: String {
+		switch self {
+			case .client(let err): return err
+		}
+	}
+}

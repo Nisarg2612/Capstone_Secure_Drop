@@ -135,6 +135,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="8gq-TK-GgV" id="oie-kN-stX"/>
                         <outlet property="errorLabel" destination="1NX-GS-gyP" id="vlP-IG-qN4"/>
+                        <outlet property="fieldStackView" destination="Vka-oX-Nl6" id="3Cd-W1-PRo"/>
                         <outlet property="loginButton" destination="5ZO-PB-fux" id="Vbp-mi-M9W"/>
                         <outlet property="passwordTextField" destination="Ux7-GY-Vd1" id="nPu-cm-dZ3"/>
                     </connections>

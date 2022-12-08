@@ -15,23 +15,32 @@ protocol LoginViewResponder {
 }
 
 class LoginViewController: UIViewController, Storyboarded {
-    @IBOutlet var emailTextField: UITextField!
+	@IBOutlet var fieldStackView: UIStackView!
+	@IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var errorLabel: UILabel!
+	var resetPasswordLabel: UILabel!
 	
 	var viewModel: LoginBusinessLogic!
+	var bottomSheetVC: PresentedViewController!
 
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
+	func addKeyboardNotifications() {
+		NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
 	func setup() {
 		setUpElements()
 		setupPasswordTextField()
 		setupView()
 		setupLoginBtn()
+		setupResetPasswordLabel()
+		addKeyboardNotifications()
 	}
 	func setupLoginBtn() {
 		self.loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
@@ -39,7 +48,28 @@ class LoginViewController: UIViewController, Storyboarded {
 	func setupView() {
 		(self.viewModel as! LoginViewModel).delegate = self
 	}
-    
+	func setupResetPasswordLabel() {
+		resetPasswordLabel = UILabel(frame: .zero)
+		fieldStackView.addArrangedSubview(resetPasswordLabel)
+		
+		let resetText = "Reset Password"
+//		resetPasswordLabel.text = resetText
+		var attrs: [NSAttributedString.Key: Any] = [:]
+		attrs[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single
+		attrs[NSAttributedString.Key.underlineColor] = UIColor.black
+		attrs[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single
+		attrs[NSAttributedString.Key.foregroundColor] = UIColor.systemBlue
+		let attrString = NSMutableAttributedString(string: resetText)
+		attrString.setAttributes(attrs, range: (resetText as NSString).range(of: resetText))
+		resetPasswordLabel.attributedText = attrString
+		let tapGesture = UITapGestureRecognizer()
+		tapGesture.numberOfTapsRequired = 1
+		tapGesture.numberOfTouchesRequired = 1
+		tapGesture.addTarget(self, action: #selector(didTapResetPassword))
+		resetPasswordLabel.addGestureRecognizer(tapGesture)
+		resetPasswordLabel.textAlignment = .right
+		resetPasswordLabel.isUserInteractionEnabled = true
+	}
     func setupPasswordTextField() {
         self.passwordTextField.isSecureTextEntry = true
     }
@@ -50,7 +80,10 @@ class LoginViewController: UIViewController, Storyboarded {
         CustomUtilities.styleTextField(passwordTextField)
         CustomUtilities.styleFilledButton(loginButton)
     }
-	
+	func addSubviews() {
+		
+	}
+
 	func showViewControllerHelper(_ vc: UIViewController) {
 		if self.definesPresentationContext, self.navigationController != nil {
 			self.viewModel.coordinator.pushView(vc)
@@ -84,6 +117,28 @@ class LoginViewController: UIViewController, Storyboarded {
         self.addLoadingIndicator()
 		self.viewModel?.signIn(authUser: AuthUser(emailAddress: emailAddress, password: password))
     }
+	@objc func didTapResetPassword() {
+		let passwordResetBottomSheet = ChangeCredentialView(viewType: .resetPasswordViaEmail)
+		passwordResetBottomSheet.delegate = self
+		
+		let resetPasswordVC = PresentedViewController(bottomSheetView: passwordResetBottomSheet, shouldDismissWithTap: true, bottomMargin: 0)
+		self.bottomSheetVC = resetPasswordVC
+		self.viewModel.coordinator.presentView(resetPasswordVC)
+	}
+	@objc func showKeyboard(notificaiton: Notification) {
+		guard let bottomSheetVC = bottomSheetVC else { return }
+		let endFrame = (notificaiton.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+		UIView.animate(withDuration: 1.0) {
+			bottomSheetVC.view.bounds.origin.y += endFrame.height
+		}
+	}
+	@objc func hideKeyboard(notificaiton: Notification) {
+		guard let bottomSheetVC = bottomSheetVC else { return }
+		UIView.animate(withDuration: 1.0) {
+			bottomSheetVC.view.bounds.origin.y = 0
+		}
+	}
+	
 }
         
     
@@ -93,6 +148,7 @@ extension LoginViewController: LoginViewResponder {
 		self.removeLoadingIndicator()
 		self.errorLabel.text = text
 		self.errorLabel.isHidden = false
+		self.bottomSheetVC.dismiss(animated: true)
 	}
 	
 	func showSetMPinViewController() {
@@ -108,4 +164,41 @@ extension LoginViewController: LoginViewResponder {
 			setDeliveryPinVC.viewModel = DeliveryPinViewModel()
 		self.showViewControllerHelper(setDeliveryPinVC)
 	}
+}
+
+extension LoginViewController: CredentialViewDelegate {
+	func didTapSubmitBtn(for viewType: CredentialViewType, newCredential: String) {
+		self.view.isUserInteractionEnabled = false
+		self.addLoadingIndicator(toView: self.bottomSheetVC.view, color: .white)
+		switch viewType {
+			case .resetPasswordViaEmail:
+				self.viewModel.resetPassword(for: newCredential) { err in
+					if let err = err {
+						self.bottomSheetVC.dismiss(animated: true) {
+							self.showErrorLabel(with: err.localizedDescription)
+							self.view.isUserInteractionEnabled = true
+							self.removeLoadingIndicator(from: self.bottomSheetVC.view)
+						}
+					} else {
+						let confirmPasswordResetAlertVC = self.makeAlertVC(title: "Sent!", message: "Please check your email account for a reset password email.") {
+							self.bottomSheetVC.dismiss(animated: true)
+						}
+						self.viewModel.coordinator.presentView(confirmPasswordResetAlertVC) {
+							self.view.isUserInteractionEnabled = true
+							self.removeLoadingIndicator(from: self.bottomSheetVC.view)
+						}
+					}
+				}
+				break
+			default:
+				Log("Should not exec from: \(#function). Please review.", .error)
+				self.showErrorLabel(with: "Please contact administrator.")
+				self.view.isUserInteractionEnabled = true
+				self.removeLoadingIndicator(from: self.bottomSheetVC.view)
+				self.bottomSheetVC.dismiss(animated: true)
+				return
+		}
+	}
+	
+	
 }
