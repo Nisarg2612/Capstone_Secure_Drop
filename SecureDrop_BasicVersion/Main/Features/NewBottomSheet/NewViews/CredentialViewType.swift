@@ -11,7 +11,7 @@ import UIKit
 protocol CredentialViewDelegate: AnyObject {
 	func didTapSubmitBtn(for viewType: CredentialViewType, newCredential: String)
 }
-enum CredentialViewType { case password, MPIN }
+enum CredentialViewType { case password, MPIN, resetPasswordViaEmail }
 class ChangeCredentialView: UIView {
 	weak var delegate: CredentialViewDelegate?
 	var titleLabel = UILabel(frame: .zero)
@@ -75,11 +75,15 @@ class ChangeCredentialView: UIView {
 		self.submitBtnLabel.isUserInteractionEnabled = true
 	}
 	func setupInputTextField() {
-		inputTextField.placeholder = viewModel.placeholder
+		guard let placeHolder = viewModel.placeholder else {
+			inputTextField.alpha = 0
+			return
+		}
+		inputTextField.placeholder = placeHolder
 		inputTextField.font = .systemFont(ofSize: 20, weight: .medium)
 		inputTextField.borderStyle = .roundedRect
-		inputTextField.isSecureTextEntry = true
-		inputTextField.keyboardType = viewType == .MPIN ? .numberPad : .default
+		inputTextField.isSecureTextEntry = self.viewModel.isSecureEntry
+		inputTextField.keyboardType = viewType == .MPIN ? .numberPad : .asciiCapable
 	}
 	
 	func setupDescriptionLabel() {
@@ -122,7 +126,17 @@ class ChangeCredentialView: UIView {
 	//specify keyboard type
 	init(viewType: CredentialViewType) {
 		self.viewType = viewType
-		self.viewModel = self.viewType == .password ? PasswordViewModelBottomSheet() : MPINViewModelBottomSheet()
+		switch viewType {
+			case .password:
+				self.viewModel = PasswordViewModelBottomSheet()
+				break
+			case .MPIN:
+				self.viewModel = MPINViewModelBottomSheet()
+				break
+			case .resetPasswordViaEmail:
+				self.viewModel = ResetPasswordViewModelBottomSheet()
+				break
+		}
 		super.init(frame: .zero)
 	}
 	
@@ -134,19 +148,29 @@ class ChangeCredentialView: UIView {
 protocol BottomSheetViewProtocol {
 	var title: String { set get }
 	var descriptionText: String { set get }
-	var placeholder: String { get }
+	var placeholder: String? { get }
 	var submitText: String { get }
+	var isSecureEntry: Bool { get }
 }
 
 struct PasswordViewModelBottomSheet: BottomSheetViewProtocol {
 	var title = "Change Password"
 	var descriptionText: String = "Please enter a new password. Upon submitting, this will be your new password."
-	var placeholder = "Enter Password"
+	var placeholder: String? = "Enter Password"
 	var submitText: String = "Update Password"
+	var isSecureEntry: Bool = true
 }
 struct MPINViewModelBottomSheet: BottomSheetViewProtocol {
 	var title = "Update MPIN"
 	var descriptionText: String = "Please enter a new MPIN. Your new MPIN will go into effect immediately."
-	var placeholder = "New #MPIN"
+	var placeholder: String? = "New #MPIN"
 	var submitText: String = "Submit New MPIN"
+	var isSecureEntry: Bool = true
+}
+struct ResetPasswordViewModelBottomSheet: BottomSheetViewProtocol {
+	var title: String = "Reset Password"
+	var descriptionText: String = "A password reset link will be sent to your email account"
+	var placeholder: String? = "youremail@gmail.com"
+	var submitText: String = "Ok"
+	var isSecureEntry: Bool = false
 }

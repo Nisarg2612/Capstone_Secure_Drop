@@ -231,7 +231,10 @@ extension SetDeliveryPinViewController: CredentialViewDelegate {
 							break
 					}
 				}
-				break
+			default:
+				Log("Should not exec from: \(#function). Please review", .error)
+				self.showError(title: "Error", message: "Please contact administrator.")
+				return
 		}
 	}
 	

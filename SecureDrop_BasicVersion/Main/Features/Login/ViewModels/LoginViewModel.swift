@@ -11,6 +11,7 @@ import Firebase
 protocol LoginBusinessLogic {
 	var coordinator: NavigationResponderDelegate { get }
 	func signIn(authUser: AuthUser)
+	func resetPassword(for email: String, completion: @escaping (Error?) -> Void)
 }
 
 class LoginViewModel {
@@ -98,6 +99,7 @@ extension LoginViewModel: LoginBusinessLogic {
 			
 		}
 	}
-	
-	
+	func resetPassword(for email: String, completion: @escaping (Error?) -> Void) {
+		self.auth.resetPassword(for: email, completion: completion)
+	}
 }
